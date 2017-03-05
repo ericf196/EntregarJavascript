@@ -1,0 +1,84 @@
+<html>
+	<head>
+
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
+	
+	<script>
+					  $(document).ready(function(){
+					    $('#Padre').click(function(){
+							
+					    	var palabra = prompt("Diga el nodo", "Harry Potter");
+					    	var para = document.createElement("li");
+					    	var node = document.createTextNode(palabra);
+							
+							para.appendChild(node);
+							
+						    if (palabra != null) {
+								
+								var element=document.getElementById("demo");
+						        
+						        element.appendChild(para);
+
+						    }		
+
+						
+					    });
+
+					    $('#Hijo').click(function(){
+					    	var buscarPalabra = prompt("Diga el nodo padre", "Harry Potter");
+					    	var buscarPalabra1 = prompt("Nombre del nodo", "Harry Potter");
+							var elementosLista = document.getElementsByTagName('LI');							
+					    
+							for (var i = 0; i < elementosLista.length; i++) {
+
+								var palabra =elementosLista[i].innerHTML;
+
+								if(palabra==buscarPalabra){
+									var elementoul = document.createElement("ul");
+									var elementoli = document.createElement("li");				
+									var node = document.createTextNode(buscarPalabra1);
+									
+									elementoli.appendChild(node);
+
+									elementoul.appendChild(elementoli);
+									console.log(elementosLista[i].parentNode);
+									
+									(elementosLista[i].parentNode).appendChild(elementoul);
+
+								}
+
+								//console.log(elementosLista[i].innerHTML);
+							}
+					    
+
+					    });
+
+
+					  });
+					</script>
+
+
+	</head>
+	<body>
+
+				<b><p>Instrucciones: el boton "Anadir padre iniciales" es solamemte para los nodos raices(carros, computadoras,animales,hogar)</p>
+				<p>Instrucciones: el boton "Anadir padre o hijo" es para los demas nodos</p>
+				<p>Instrucciones: El arbol se debe llenar de arriba a abajo por ejemplo: computadoras, software,juegos,estrategia,rol,administracion,hardware y animales (recordando las instrucciones anteriores)</p>
+				<b/>
+				
+				<input id="Padre" type="button" value="Anadir padre iniciales"/>
+				<input id="Hijo" type="button" value="Anadir padre o hijo"/>
+				<br/>
+				<ul id="demo">
+				  
+				</ul>
+
+					
+
+					
+							
+	</body>
+
+
+</html>
